@@ -11,7 +11,7 @@ pnpm -v   # 12 ou plus
 
 Si Node n'est pas installé : https://nodejs.org (prendre la version LTS)
 
-Si pnpm n'est pas installé : https://pnpm.io/installation — le dépôt refuse volontairement `npm` (voir [Sécurité des dépendances](../README.md#sécurité-des-dépendances)).
+Si pnpm n'est pas installé : https://pnpm.io/installation — le dépôt refuse volontairement `npm` (voir [Sécurité des dépendances](./README.md#sécurité-des-dépendances)).
 
 ---
 
@@ -109,7 +109,7 @@ Le slot est prêt dans `src/components/three/Avatar3D.tsx`.
 
 ## 7. Problèmes fréquents
 
-**`pnpm install` échoue** → vérifie ta connexion, que Node ≥ 20 et pnpm ≥ 12 sont installés. Si l'erreur parle de `minimumReleaseAge` ou de `trust`, c'est le garde-fou supply-chain qui bloque une version trop récente : voir [Sécurité des dépendances](../README.md#sécurité-des-dépendances)
+**`pnpm install` échoue** → vérifie ta connexion, que Node ≥ 20 et pnpm ≥ 12 sont installés. Si l'erreur parle de `minimumReleaseAge` ou de `trust`, c'est le garde-fou supply-chain qui bloque une version trop récente : voir [Sécurité des dépendances](./README.md#sécurité-des-dépendances)
 
 **Port 3000 déjà utilisé** → lance sur un autre port :
 ```bash

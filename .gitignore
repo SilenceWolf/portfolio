@@ -1,0 +1,21 @@
+# ============================================================
+# © 2026 Louis Guillory (Silence Wolf) — Tous droits réservés
+# ============================================================
+# Copie du bloc Node du .gitignore racine : ce dossier est aussi
+# publié seul dans le dépôt « portfolio » (voir README.md).
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+dist/
+build/
+.env
+.env.local
+.env.*.local
+!.env.local.example
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+.vercel/
