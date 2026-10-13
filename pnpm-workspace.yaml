@@ -1,0 +1,36 @@
+# ============================================================
+# © 2026 Louis Guillory (Silence Wolf) — Tous droits réservés
+# ============================================================
+# Réglages pnpm — durcissement supply-chain après les vers npm
+# Shai-Hulud / ChainDrop (août 2026). Explications complètes :
+# Siteweb/README.md → section « Sécurité des dépendances ».
+
+# Délai de carence : aucune version publiée depuis moins de 7 jours
+# n'est installée, dépendances transitives comprises. Les versions
+# piégées sont en général retirées du registre en quelques heures.
+minimumReleaseAge: 10080
+minimumReleaseAgeStrict: true
+
+# Les dépendances transitives doivent venir du registre npm, jamais
+# d'un dépôt git ou d'une URL de tarball.
+blockExoticSubdeps: true
+
+# Refuse une version dont le niveau de confiance (provenance, signature)
+# a baissé par rapport aux précédentes — symptôme typique d'un compte
+# mainteneur compromis.
+trustPolicy: no-downgrade
+# ...sauf pour les versions publiées depuis plus de 30 jours : le contrôle
+# vise les prises de contrôle fraîches, pas les vieux paquets sans
+# provenance (ex. undici-types 6.x, dépendance de @types/node).
+trustPolicyIgnoreAfter: 43200
+
+# Aucun script d'installation (preinstall / postinstall) de dépendance
+# ne s'exécute : c'est le vecteur d'exécution du ver. Les paquets listés
+# ci-dessous en déclarent un ; ils fonctionnent sans (binaires
+# précompilés fournis en optionalDependencies). L'installation échoue
+# si un nouveau paquet à script apparaît sans décision explicite ici.
+strictDepBuilds: true
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
+  fsevents: false

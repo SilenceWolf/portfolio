@@ -17,16 +17,16 @@ L'esthétique joue sur 8 thèmes visuels distincts (cyberpunk, terminal, hologra
 
 ```bash
 cd Siteweb/portfolio
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 L'application tourne sur `http://localhost:3000`.
 
 Pour le build de production :
 ```bash
-npm run build
-npm start
+pnpm build
+pnpm start
 ```
 
 ---

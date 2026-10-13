@@ -6,10 +6,12 @@ Avant tout, vérifie que tu as :
 
 ```bash
 node -v   # 18 ou plus
-npm -v    # 9 ou plus
+pnpm -v   # 12 ou plus
 ```
 
 Si Node n'est pas installé : https://nodejs.org (prendre la version LTS)
+
+Si pnpm n'est pas installé : https://pnpm.io/installation — le dépôt refuse volontairement `npm` (voir [Sécurité des dépendances](../README.md#sécurité-des-dépendances)).
 
 ---
 
@@ -19,7 +21,7 @@ Si Node n'est pas installé : https://nodejs.org (prendre la version LTS)
 
 ```bash
 cd c:/Users/loulo/Documents/PROJET_PERSO/Siteweb/portfolio
-npm install
+pnpm install
 ```
 
 L'installation prend 1-2 minutes — elle télécharge Next.js, Three.js, GSAP, Framer Motion, etc.
@@ -29,7 +31,7 @@ L'installation prend 1-2 minutes — elle télécharge Next.js, Three.js, GSAP, 
 ## 2. Lancer le serveur de développement
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Ouvre ensuite **http://localhost:3000** dans ton navigateur.
@@ -42,13 +44,13 @@ Le serveur recharge automatiquement dès que tu sauvegardes un fichier — pas b
 
 ```bash
 # Vérifier que le build de production compile sans erreur
-npm run build
+pnpm build
 
 # Lancer la version de production en local (après un build)
-npm run start
+pnpm start
 
 # Vérifier les erreurs TypeScript et ESLint
-npm run lint
+pnpm lint
 ```
 
 ---
@@ -61,7 +63,7 @@ Le fichier `.vscode/launch.json` est configuré à la racine de `PROJET_PERSO`.
 
 | Configuration | Ce qu'elle fait |
 |---|---|
-| **Portfolio — dev** | Lance `npm run dev`, ouvre le navigateur automatiquement |
+| **Portfolio — dev** | Lance `pnpm dev`, ouvre le navigateur automatiquement |
 | **Portfolio — debug server** | Idem + active l'inspecteur Node.js (breakpoints côté serveur) |
 | **Portfolio — debug Chrome** | Attache VS Code à Chrome pour les breakpoints React/frontend |
 | **Portfolio — dev + Chrome** | Lance les deux en même temps (compound) |
@@ -107,11 +109,11 @@ Le slot est prêt dans `src/components/three/Avatar3D.tsx`.
 
 ## 7. Problèmes fréquents
 
-**`npm install` échoue** → vérifie ta connexion et que Node ≥ 18 est installé
+**`pnpm install` échoue** → vérifie ta connexion, que Node ≥ 20 et pnpm ≥ 12 sont installés. Si l'erreur parle de `minimumReleaseAge` ou de `trust`, c'est le garde-fou supply-chain qui bloque une version trop récente : voir [Sécurité des dépendances](../README.md#sécurité-des-dépendances)
 
 **Port 3000 déjà utilisé** → lance sur un autre port :
 ```bash
-npm run dev -- -p 3001
+pnpm dev -p 3001
 ```
 
 **Erreur Three.js / WebGL** → ton navigateur doit supporter WebGL 2. Chrome ou Edge récent → ça passe. Firefox → normalement aussi.

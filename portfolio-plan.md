@@ -509,11 +509,11 @@ flowchart TD
 
 ### Technique
 - [ ] Repo GitHub créé
-- [ ] Next.js + TypeScript initialisé (`npx create-next-app@latest`)
+- [ ] Next.js + TypeScript initialisé (`pnpm create next-app@latest`)
 - [ ] `output: 'standalone'` dans `next.config.ts` (Docker-ready)
 - [ ] Tailwind configuré avec tokens custom (couleurs des 8 ambiances)
 - [ ] Dépendances installées : `gsap` · `framer-motion` · `three` · `@react-three/fiber` · `@react-three/drei`
-- [ ] Test local validé (`npm run dev` → `localhost:3000`)
+- [ ] Test local validé (`pnpm dev` → `localhost:3000`)
 
 ### Contenu
 - [ ] Liste des projets à présenter (3-6 projets)
